@@ -42,3 +42,5 @@ test-results/
 .cache/
 .parcel-cache/
 .eslintcache
+
+.vercel

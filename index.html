@@ -1,104 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-419">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexa – Smart Digital Solutions</title>
+  <title>Nexa Tech – Consultoría y Desarrollo Tecnológico</title>
+  <meta name="description" content="Nexa Tech es tu socio estratégico en tecnología. Desarrollo de software a medida, soluciones cloud, inteligencia artificial, ciberseguridad y consultoría IT para empresas que exigen excelencia." />
+  <meta property="og:title" content="Nexa Tech – Consultoría y Desarrollo Tecnológico" />
+  <meta property="og:description" content="Convertimos tu visión en tecnología poderosa. Software a medida, infraestructura cloud, IA y consultoría IT experta." />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <div class="progress-bar" id="progressBar" role="progressbar" aria-hidden="true"></div>
 
   <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <div class="container nav-inner">
-      <a href="#" class="logo">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <a href="#" class="logo" aria-label="Nexa Tech inicio">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="2" y="8" width="13" height="13" rx="2" fill="#c6ff00"/>
           <rect x="17" y="8" width="13" height="13" rx="2" fill="#c6ff00" opacity="0.6"/>
           <rect x="2" y="23" width="13" height="7" rx="2" fill="#c6ff00" opacity="0.4"/>
           <rect x="17" y="23" width="13" height="7" rx="2" fill="#c6ff00"/>
         </svg>
-        <span>NEXA</span>
+        <span>NEXA<span class="logo-tech">TECH</span></span>
       </a>
-      <nav class="nav-pill">
-        <a href="#about">HOMEPAGE</a>
-        <a href="#about">ABOUT US <span class="arrow">&#8964;</span></a>
-        <a href="#services">SERVICES <span class="arrow">&#8964;</span></a>
-        <a href="#portfolio">PAGES <span class="arrow">&#8964;</span></a>
-        <a href="#contact">CONTACT US</a>
+      <nav class="nav-pill" aria-label="Navegación principal">
+        <a href="#">INICIO</a>
+        <a href="#about">NOSOTROS</a>
+        <a href="#services">SERVICIOS</a>
+        <a href="#portfolio">PROYECTOS</a>
+        <a href="#contact">CONTACTO</a>
       </nav>
-      <a href="#contact" class="btn btn-lime">GET IN TOUCH</a>
-      <button class="hamburger" id="hamburger">&#9776;</button>
+      <a href="#contact" class="btn btn-lime">INICIAR PROYECTO</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
     </div>
-    <nav class="mobile-menu" id="mobileMenu">
-      <a href="#about">Homepage</a>
-      <a href="#about">About Us</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact Us</a>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Navegación móvil">
+      <a href="#">Inicio</a>
+      <a href="#about">Nosotros</a>
+      <a href="#services">Servicios</a>
+      <a href="#stack">Tecnologías</a>
+      <a href="#portfolio">Proyectos</a>
+      <a href="#contact">Contacto</a>
     </nav>
   </header>
 
+  <main>
+
   <!-- ===== HERO ===== -->
   <section class="hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="container hero-inner">
       <div class="hero-text">
-        <h1>SMART DIGITAL<br />SOLUTIONS FOR<br /><span class="hero-muted">MAXIMUM IMPACT</span></h1>
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Disponibles para nuevos proyectos
+        </div>
+        <h1>CONVERTIMOS TU<br />VISIÓN EN<br /><span class="lime">TECNOLOGÍA</span></h1>
+        <p class="hero-sub">Software a medida, infraestructura cloud y consultoría IT — construidos para empresas que exigen excelencia.</p>
         <div class="hero-btns">
-          <a href="#contact" class="btn btn-lime btn-lg">GET STARTED</a>
-          <a href="#about" class="btn-ghost">READ MORE <span class="circle-arrow">&#8594;</span></a>
+          <a href="#contact" class="btn btn-lime btn-lg">INICIAR PROYECTO</a>
+          <a href="#services" class="btn-ghost">NUESTROS SERVICIOS <span class="circle-arrow" aria-hidden="true">&#8594;</span></a>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">
+          <span>Desplazar</span>
+          <div class="scroll-line"></div>
         </div>
       </div>
-      <div class="hero-visual">
-        <svg class="wireframe-cube" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="1">
-          <!-- Front face -->
-          <polygon points="150,350 350,350 350,150 150,150" stroke="white" stroke-opacity="0.7"/>
-          <!-- Back face offset -->
-          <polygon points="200,400 400,400 400,200 200,200" stroke="white" stroke-opacity="0.4"/>
-          <!-- Connecting lines -->
-          <line x1="150" y1="150" x2="200" y2="200" stroke-opacity="0.5"/>
-          <line x1="350" y1="150" x2="400" y2="200" stroke-opacity="0.5"/>
-          <line x1="350" y1="350" x2="400" y2="400" stroke-opacity="0.5"/>
-          <line x1="150" y1="350" x2="200" y2="400" stroke-opacity="0.5"/>
-          <!-- Grid lines front face -->
-          <line x1="150" y1="217" x2="350" y2="217" stroke-opacity="0.3"/>
-          <line x1="150" y1="283" x2="350" y2="283" stroke-opacity="0.3"/>
-          <line x1="217" y1="150" x2="217" y2="350" stroke-opacity="0.3"/>
-          <line x1="283" y1="150" x2="283" y2="350" stroke-opacity="0.3"/>
-          <!-- Grid lines top face -->
-          <line x1="183" y1="183" x2="350" y2="150" stroke-opacity="0.25"/>
-          <line x1="217" y1="150" x2="267" y2="200" stroke-opacity="0.25"/>
-          <line x1="283" y1="150" x2="333" y2="200" stroke-opacity="0.25"/>
-          <!-- Grid lines right face -->
-          <line x1="350" y1="183" x2="400" y2="233" stroke-opacity="0.25"/>
-          <line x1="350" y1="250" x2="400" y2="300" stroke-opacity="0.25"/>
-          <line x1="350" y1="317" x2="400" y2="367" stroke-opacity="0.25"/>
-          <!-- Warped/distorted overlay lines -->
-          <path d="M 120,180 Q 250,100 400,180" stroke-opacity="0.15" stroke-width="0.8"/>
-          <path d="M 120,250 Q 250,170 420,250" stroke-opacity="0.12" stroke-width="0.8"/>
-          <path d="M 120,320 Q 250,240 400,320" stroke-opacity="0.1" stroke-width="0.8"/>
-        </svg>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-window">
+          <div class="code-window-bar">
+            <div class="win-dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </div>
+            <span class="win-filename">nexa-solucion.ts</span>
+          </div>
+          <div class="code-body">
+            <div class="code-line"><span class="ct-cmt">// Nexa Tech — Ingeniería para tu futuro</span></div>
+            <div class="code-line">&nbsp;</div>
+            <div class="code-line"><span class="ct-kw">const</span> <span class="ct-var">proyecto</span> <span class="ct-sym">= await</span> <span class="ct-fn">NexaTech</span><span class="ct-sym">.</span><span class="ct-fn">init</span><span class="ct-sym">({</span></div>
+            <div class="code-line"><span class="ct-prop">&nbsp;&nbsp;cliente</span><span class="ct-sym">:</span> <span class="ct-str">"TuEmpresa"</span><span class="ct-sym">,</span></div>
+            <div class="code-line"><span class="ct-prop">&nbsp;&nbsp;stack</span><span class="ct-sym">:</span> <span class="ct-sym">[</span><span class="ct-str">"React"</span><span class="ct-sym">,</span> <span class="ct-str">"Node"</span><span class="ct-sym">,</span> <span class="ct-str">"AWS"</span><span class="ct-sym">],</span></div>
+            <div class="code-line"><span class="ct-prop">&nbsp;&nbsp;entrega</span><span class="ct-sym">:</span> <span class="ct-str">"en-tiempo"</span><span class="ct-sym">,</span></div>
+            <div class="code-line"><span class="ct-sym">});</span></div>
+            <div class="code-line">&nbsp;</div>
+            <div class="code-line"><span class="ct-fn">console</span><span class="ct-sym">.</span><span class="ct-fn">log</span><span class="ct-sym">(</span><span class="ct-var">proyecto</span><span class="ct-sym">.</span><span class="ct-prop">resultados</span><span class="ct-sym">);</span></div>
+            <div class="code-line"><span class="ct-cmt">// → rendimiento: <span class="ct-lime">"+300%"</span></span></div>
+            <div class="code-line"><span class="ct-cmt">// → uptime:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ct-lime">"99.9%"</span></span></div>
+            <div class="code-line"><span class="ct-cmt">// → estado:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ct-lime">"en vivo"</span></span><span class="ct-cursor">▋</span></div>
+          </div>
+        </div>
+        <div class="hero-card hero-card-1">
+          <span class="hc-dot" aria-hidden="true"></span>
+          <div>
+            <div class="hc-title">Todos los sistemas activos</div>
+            <div class="hc-sub">SLA 99.9% de disponibilidad</div>
+          </div>
+        </div>
+        <div class="hero-card hero-card-2">
+          <div class="hc-count">300<span class="lime">+</span></div>
+          <div class="hc-label">Proyectos entregados</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== MARQUEE ===== -->
-  <div class="marquee-bar">
+  <div class="marquee-bar" aria-hidden="true">
     <div class="marquee-track">
-      <span>DIGITAL MARKETING</span><span class="dot">✦</span>
-      <span>WEB DEVELOPMENT</span><span class="dot">✦</span>
-      <span>BRANDING</span><span class="dot">✦</span>
-      <span>SEO STRATEGY</span><span class="dot">✦</span>
-      <span>SOCIAL MEDIA</span><span class="dot">✦</span>
-      <span>LEAD GENERATION</span><span class="dot">✦</span>
-      <span>DIGITAL MARKETING</span><span class="dot">✦</span>
-      <span>WEB DEVELOPMENT</span><span class="dot">✦</span>
-      <span>BRANDING</span><span class="dot">✦</span>
-      <span>SEO STRATEGY</span><span class="dot">✦</span>
-      <span>SOCIAL MEDIA</span><span class="dot">✦</span>
-      <span>LEAD GENERATION</span><span class="dot">✦</span>
+      <span>SOFTWARE A MEDIDA</span><span class="dot">✦</span>
+      <span>SOLUCIONES CLOUD</span><span class="dot">✦</span>
+      <span>INTELIGENCIA ARTIFICIAL</span><span class="dot">✦</span>
+      <span>DEVOPS &amp; CI/CD</span><span class="dot">✦</span>
+      <span>CIBERSEGURIDAD</span><span class="dot">✦</span>
+      <span>TRANSFORMACIÓN DIGITAL</span><span class="dot">✦</span>
+      <span>SOFTWARE A MEDIDA</span><span class="dot">✦</span>
+      <span>SOLUCIONES CLOUD</span><span class="dot">✦</span>
+      <span>INTELIGENCIA ARTIFICIAL</span><span class="dot">✦</span>
+      <span>DEVOPS &amp; CI/CD</span><span class="dot">✦</span>
+      <span>CIBERSEGURIDAD</span><span class="dot">✦</span>
+      <span>TRANSFORMACIÓN DIGITAL</span><span class="dot">✦</span>
     </div>
   </div>
 
@@ -106,20 +135,20 @@
   <section class="stats">
     <div class="container stats-grid">
       <div class="stat-item">
-        <h2>50<span class="lime">+</span></h2>
-        <p>Countries Served</p>
+        <h2><span class="counter" data-target="300">300</span><span class="lime">+</span></h2>
+        <p>Proyectos entregados</p>
       </div>
       <div class="stat-item">
-        <h2>200<span class="lime">+</span></h2>
-        <p>Royal Partners</p>
+        <h2><span class="counter" data-target="150">150</span><span class="lime">+</span></h2>
+        <p>Clientes satisfechos</p>
       </div>
       <div class="stat-item">
-        <h2>24/7</h2>
-        <p>Support Available</p>
+        <h2>99.9<span class="lime">%</span></h2>
+        <p>Disponibilidad garantizada</p>
       </div>
       <div class="stat-item">
-        <h2>10<span class="lime">+</span></h2>
-        <p>Years Experience</p>
+        <h2><span class="counter" data-target="10">10</span><span class="lime">+</span></h2>
+        <p>Años de experiencia</p>
       </div>
     </div>
   </section>
@@ -128,23 +157,23 @@
   <section class="about section" id="about">
     <div class="container about-inner">
       <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Team working" />
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="Equipo de Nexa Tech colaborando en un espacio de trabajo moderno" loading="lazy" />
         <div class="about-badge">
           <span class="badge-num">10<span class="lime">+</span></span>
-          <span class="badge-text">Years of Experience</span>
+          <span class="badge-text">Años de excelencia</span>
         </div>
       </div>
       <div class="about-text">
-        <span class="label-lime">ALL YOU NEED TO KNOW</span>
-        <h2>Your Partner<br />in <span class="lime">Growth</span></h2>
-        <p>We combine strategy, creativity, and technology to build digital solutions that truly work. With over 10 years of experience, we've helped hundreds of businesses grow their online presence and achieve measurable results.</p>
+        <span class="label-lime">QUIÉNES SOMOS</span>
+        <h2>Tu Socio Estratégico<br /><span class="lime">en Tecnología</span></h2>
+        <p>Somos una firma de consultoría y desarrollo tecnológico que transforma desafíos complejos en soluciones elegantes y escalables. Con un equipo de más de 80 ingenieros, arquitectos y estrategas, hemos ayudado a empresas de más de 40 países a acelerar su transformación digital.</p>
         <ul class="check-list">
-          <li>Tailored Solutions for every business</li>
-          <li>Results-Driven Digital Strategies</li>
-          <li>Lead Generation &amp; Growth Hacking</li>
-          <li>24/7 Dedicated Support</li>
+          <li>Ciclo completo de desarrollo de software</li>
+          <li>Arquitectura cloud-native y escalable</li>
+          <li>Entrega ágil con total transparencia</li>
+          <li>Soporte de ingeniería dedicado 24/7</li>
         </ul>
-        <a href="#contact" class="btn btn-lime">GET QUOTES</a>
+        <a href="#contact" class="btn btn-lime">HABLEMOS</a>
       </div>
     </div>
   </section>
@@ -153,47 +182,206 @@
   <section class="services section" id="services">
     <div class="container">
       <div class="section-header">
-        <span class="label-lime">WHAT WE DO</span>
-        <h2>Our Core <span class="lime">Services</span></h2>
-        <p>Everything your business needs to thrive online — strategy, design, development, and marketing.</p>
+        <span class="label-lime">LO QUE HACEMOS</span>
+        <h2>Servicios Tech<br /><span class="lime">de Punta a Punta</span></h2>
+        <p>Desde la estrategia hasta el despliegue — cubrimos todo el espectro tecnológico que las empresas modernas necesitan.</p>
       </div>
       <div class="services-grid">
+
         <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
           <div class="service-num">01</div>
-          <h3>Digital Marketing Strategy</h3>
-          <p>Data-driven campaigns that reach the right audience at the right time and convert them into loyal customers.</p>
-          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
+          <h3>Desarrollo de Software a Medida</h3>
+          <p>Apps web, móviles, APIs y plataformas empresariales — construidas para escalar, diseñadas para rendir, ingeniadas para durar.</p>
+          <a href="#contact" class="link-lime">Iniciar proyecto &rarr;</a>
         </div>
+
         <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+            </svg>
+          </div>
           <div class="service-num">02</div>
-          <h3>Website Design & Development</h3>
-          <p>High-performance websites built for speed, accessibility, and conversion — designed to impress and built to last.</p>
-          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
+          <h3>Cloud e Infraestructura</h3>
+          <p>Migraciones a AWS, Azure y GCP, pipelines DevOps, orquestación de contenedores y automatización CI/CD a escala.</p>
+          <a href="#contact" class="link-lime">Iniciar proyecto &rarr;</a>
         </div>
+
         <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+              <path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 7.76a6 6 0 0 0 0 8.49"/>
+            </svg>
+          </div>
           <div class="service-num">03</div>
-          <h3>Branding & Graphic Design</h3>
-          <p>Memorable brand identities that communicate your values and set you apart from the competition.</p>
-          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
+          <h3>Consultoría IT y Estrategia</h3>
+          <p>Hojas de ruta de transformación digital, auditorías tecnológicas, revisiones de arquitectura y CTO as a Service para empresas en crecimiento.</p>
+          <a href="#contact" class="link-lime">Iniciar proyecto &rarr;</a>
         </div>
+
         <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+            </svg>
+          </div>
           <div class="service-num">04</div>
-          <h3>Social Media Management</h3>
-          <p>Consistent, engaging content across all platforms that builds community and drives meaningful engagement.</p>
-          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
+          <h3>IA y Soluciones de Datos</h3>
+          <p>Modelos de machine learning, pipelines de datos, dashboards de analítica en tiempo real y automatización inteligente para tu negocio.</p>
+          <a href="#contact" class="link-lime">Iniciar proyecto &rarr;</a>
         </div>
+
         <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
           <div class="service-num">05</div>
-          <h3>Lead Generation & Growth Hacking</h3>
-          <p>Innovative tactics that fuel rapid growth, attract qualified leads, and maximize your ROI.</p>
-          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
+          <h3>Ciberseguridad</h3>
+          <p>Pruebas de penetración, auditorías de seguridad, consultoría de cumplimiento (SOC 2, ISO 27001) y monitoreo continuo de amenazas.</p>
+          <a href="#contact" class="link-lime">Iniciar proyecto &rarr;</a>
         </div>
+
         <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+              <polyline points="16 7 22 7 22 13"/>
+            </svg>
+          </div>
           <div class="service-num">06</div>
-          <h3>SEO & Content Marketing</h3>
-          <p>Rank higher, get found faster, and convert organic traffic into real business with our proven SEO strategies.</p>
-          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
+          <h3>Transformación Digital</h3>
+          <p>Modernización de sistemas legacy, automatización de procesos, implementaciones ERP y digitalización empresarial de extremo a extremo.</p>
+          <a href="#contact" class="link-lime">Iniciar proyecto &rarr;</a>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECH STACK ===== -->
+  <section class="tech-stack section" id="stack">
+    <div class="container">
+      <div class="section-header">
+        <span class="label-lime">TECNOLOGÍAS</span>
+        <h2>Nuestro <span class="lime">Stack Tecnológico</span></h2>
+        <p>Trabajamos con las herramientas más poderosas de la industria para construir soluciones robustas, escalables y preparadas para el futuro.</p>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-category">
+          <h4>Frontend &amp; Móvil</h4>
+          <div class="tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">React Native</span>
+            <span class="tech-tag">Flutter</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h4>Backend &amp; APIs</h4>
+          <div class="tech-tags">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Go</span>
+            <span class="tech-tag">Java / Spring</span>
+            <span class="tech-tag">GraphQL</span>
+            <span class="tech-tag">REST &amp; gRPC</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h4>Cloud &amp; DevOps</h4>
+          <div class="tech-tags">
+            <span class="tech-tag">AWS</span>
+            <span class="tech-tag">Azure</span>
+            <span class="tech-tag">Google Cloud</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">Terraform</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h4>Datos &amp; IA</h4>
+          <div class="tech-tags">
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Apache Spark</span>
+            <span class="tech-tag">Redis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="process section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="label-lime">CÓMO TRABAJAMOS</span>
+        <h2>Un Proceso Orientado<br /><span class="lime">a Resultados</span></h2>
+        <p>Nuestra metodología probada de cuatro pasos entrega software de calidad, a tiempo y superando las expectativas.</p>
+      </div>
+      <div class="process-steps">
+
+        <div class="process-step">
+          <div class="step-bg-num" aria-hidden="true">01</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <div class="step-num-label">01</div>
+          <h3>Descubrimiento</h3>
+          <p>Nos sumergimos en tus objetivos de negocio, requerimientos técnicos y restricciones para definir una hoja de ruta clara y accionable.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-bg-num" aria-hidden="true">02</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <div class="step-num-label">02</div>
+          <h3>Arquitectura</h3>
+          <p>Diseñamos una arquitectura escalable, segura y mantenible, adaptada a las necesidades específicas de tu negocio y escala.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-bg-num" aria-hidden="true">03</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="step-num-label">03</div>
+          <h3>Desarrollo</h3>
+          <p>Sprints ágiles con integración continua, revisiones de código rigurosas y pruebas automatizadas que garantizan entrega de primer nivel.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-bg-num" aria-hidden="true">04</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="step-num-label">04</div>
+          <h3>Despliegue &amp; Soporte</h3>
+          <p>Despliegue fluido con monitoreo 24/7, mantenimiento proactivo y un equipo de soporte dedicado siempre a tu lado.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -202,40 +390,44 @@
   <section class="portfolio section" id="portfolio">
     <div class="container">
       <div class="section-header">
-        <span class="label-lime">OUR WORK</span>
-        <h2>Elevating Brands with Powerful<br /><span class="lime">Digital Experiences</span></h2>
+        <span class="label-lime">NUESTROS PROYECTOS</span>
+        <h2>Soluciones que Generan<br /><span class="lime">Resultados Reales</span></h2>
       </div>
       <div class="portfolio-grid">
         <div class="portfolio-card">
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="Case study 1" />
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Sistema ERP empresarial — transformación digital de manufactura" loading="lazy" />
           <div class="portfolio-overlay">
-            <span class="tag-lime">E-Commerce</span>
-            <h3>Boosting Online Sales by 300%</h3>
-            <a href="#" class="link-lime">Read More &rarr;</a>
+            <span class="tag-lime">Empresarial</span>
+            <h3>Sistema ERP para Empresa con 5,000 Empleados</h3>
+            <p class="portfolio-result">40% de mejora en eficiencia operativa</p>
+            <a href="#contact" class="link-lime">Ver más &rarr;</a>
           </div>
         </div>
         <div class="portfolio-card">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Case study 2" />
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Plataforma SaaS FinTech con visualización de datos en tiempo real" loading="lazy" />
           <div class="portfolio-overlay">
-            <span class="tag-lime">Branding</span>
-            <h3>Transforming a Local Business into a Global Brand</h3>
-            <a href="#" class="link-lime">Read More &rarr;</a>
+            <span class="tag-lime">FinTech</span>
+            <h3>Plataforma SaaS de Trading en Tiempo Real</h3>
+            <p class="portfolio-result">2M+ transacciones diarias, cero tiempo de inactividad</p>
+            <a href="#contact" class="link-lime">Ver más &rarr;</a>
           </div>
         </div>
         <div class="portfolio-card">
-          <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&q=80" alt="Case study 3" />
+          <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&q=80" alt="Dashboard de analítica empresarial impulsado por IA" loading="lazy" />
           <div class="portfolio-overlay">
-            <span class="tag-lime">Social Media</span>
-            <h3>Viral Marketing Success</h3>
-            <a href="#" class="link-lime">Read More &rarr;</a>
+            <span class="tag-lime">IA &amp; Datos</span>
+            <h3>Dashboard de Inteligencia de Negocio con IA</h3>
+            <p class="portfolio-result">85% menos tiempo en generación de reportes</p>
+            <a href="#contact" class="link-lime">Ver más &rarr;</a>
           </div>
         </div>
         <div class="portfolio-card">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Case study 4" />
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="App móvil de salud multiplataforma con 500k usuarios" loading="lazy" />
           <div class="portfolio-overlay">
-            <span class="tag-lime">SaaS</span>
-            <h3>Scaling Up SaaS Growth</h3>
-            <a href="#" class="link-lime">Read More &rarr;</a>
+            <span class="tag-lime">Móvil</span>
+            <h3>App de Salud y Bienestar Multiplataforma</h3>
+            <p class="portfolio-result">500k+ usuarios activos en 6 meses</p>
+            <a href="#contact" class="link-lime">Ver más &rarr;</a>
           </div>
         </div>
       </div>
@@ -246,51 +438,51 @@
   <section class="testimonials section">
     <div class="container">
       <div class="section-header">
-        <span class="label-lime">CLIENT FEEDBACK</span>
-        <h2>Proven Success Through<br /><span class="lime">Client Feedback</span></h2>
+        <span class="label-lime">LO QUE DICEN</span>
+        <h2>La Confianza de<br /><span class="lime">Líderes Tecnológicos</span></h2>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Nexa completely transformed our online presence. Our sales have tripled since working with them. Absolutely exceptional team!"</p>
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p>"Nexa Tech entregó una arquitectura de microservicios distribuida que maneja 10 veces nuestra carga anterior. Su equipo de ingeniería es de clase mundial. Un cambio total de juego."</p>
           <div class="client">
-            <img src="https://i.pravatar.cc/50?img=1" alt="Sarah Thompson" />
+            <img src="https://i.pravatar.cc/50?img=11" alt="David Chen" loading="lazy" />
             <div>
-              <strong>Sarah Thompson</strong>
-              <span>CEO, TrendyWear</span>
+              <strong>David Chen</strong>
+              <span>CTO, ScaleFlow Inc.</span>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Their digital marketing strategy helped us reach customers we never thought possible. ROI was beyond our expectations."</p>
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p>"La migración a la nube fue impecable. Cero tiempo de inactividad, 60% menos en costos de infraestructura y nuestro equipo ahora despliega 10 veces más rápido. Nexa Tech transformó la forma en que operamos."</p>
           <div class="client">
-            <img src="https://i.pravatar.cc/50?img=3" alt="James Carter" />
+            <img src="https://i.pravatar.cc/50?img=20" alt="María González" loading="lazy" />
             <div>
-              <strong>James Carter</strong>
-              <span>Founder, GreenBites</span>
+              <strong>María González</strong>
+              <span>VP de Ingeniería, FinBridge</span>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Professional, creative, and results-driven. Nexa delivered a website that not only looks great but actually converts visitors."</p>
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p>"Su solución de IA redujo nuestro tiempo de detección de fraude de horas a milisegundos. El ROI fue visible desde el primer trimestre. Recomiendo Nexa Tech a cada ejecutivo que conozco."</p>
           <div class="client">
-            <img src="https://i.pravatar.cc/50?img=5" alt="Emily Ross" />
+            <img src="https://i.pravatar.cc/50?img=5" alt="James Whitfield" loading="lazy" />
             <div>
-              <strong>Emily Ross</strong>
-              <span>Marketing Director, FitFlex</span>
+              <strong>James Whitfield</strong>
+              <span>CEO, SecureVault Financial</span>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Working with Nexa was a game changer. Their team understood our vision and executed it flawlessly. Highly recommended!"</p>
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p>"Desde la revisión de arquitectura hasta la implementación completa, Nexa Tech fue un verdadero socio. Entendieron nuestro dominio en profundidad y entregaron exactamente lo que necesitábamos — a tiempo."</p>
           <div class="client">
-            <img src="https://i.pravatar.cc/50?img=7" alt="Michael Johnson" />
+            <img src="https://i.pravatar.cc/50?img=32" alt="Amara Osei" loading="lazy" />
             <div>
-              <strong>Michael Johnson</strong>
-              <span>CEO, CloudTech Solutions</span>
+              <strong>Amara Osei</strong>
+              <span>Director IT, GlobalMed Group</span>
             </div>
           </div>
         </div>
@@ -302,34 +494,34 @@
   <section class="faq section">
     <div class="container faq-wrap">
       <div class="section-header">
-        <span class="label-lime">FAQ</span>
-        <h2>Frequently Asked <span class="lime">Questions</span></h2>
-        <p>Helping You Understand Our Services Better!</p>
+        <span class="label-lime">PREGUNTAS FRECUENTES</span>
+        <h2>Resolvemos tus<br /><span class="lime">Dudas</span></h2>
+        <p>Todo lo que necesitás saber sobre trabajar con Nexa Tech.</p>
       </div>
       <div class="faq-list">
         <div class="faq-item">
-          <button class="faq-question">What services does Nexa offer? <span class="faq-icon">+</span></button>
-          <div class="faq-answer">We offer digital marketing strategy, website design & development, branding, social media management, SEO, and lead generation services.</div>
+          <button class="faq-question" aria-expanded="false">¿Qué tipos de proyectos desarrollan? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" role="region">Trabajamos en una amplia gama: desde MVPs y startups hasta sistemas empresariales de gran escala — aplicaciones web y móviles a medida, plataformas SaaS, integraciones de APIs, migraciones cloud, implementaciones de IA y programas de transformación digital completa.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">How long does it take to see results? <span class="faq-icon">+</span></button>
-          <div class="faq-answer">Results vary by service. SEO typically shows significant improvements within 3-6 months, while paid campaigns can generate results immediately.</div>
+          <button class="faq-question" aria-expanded="false">¿Cómo manejan la gestión del proyecto y la comunicación? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" role="region">Usamos metodología Agile/Scrum con sprints de dos semanas, standups diarios y demos semanales con los stakeholders. Tendrás un gerente de proyecto dedicado y acceso directo a tu equipo de ingeniería vía Slack o la herramienta de comunicación que prefieras.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Can you customize services for my business? <span class="faq-icon">+</span></button>
-          <div class="faq-answer">Absolutely. Every strategy we develop is tailored specifically to your business goals, industry, and target audience.</div>
+          <button class="faq-question" aria-expanded="false">¿En qué tecnologías se especializan? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" role="region">Nuestra experiencia central incluye React, Next.js, Node.js, Python, Go, Java, AWS, Azure, GCP, Docker, Kubernetes, PostgreSQL, MongoDB, TensorFlow y más. Elegimos el stack correcto para tus requerimientos específicos — no solo lo que conocemos.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">What makes Nexa different from other agencies? <span class="faq-icon">+</span></button>
-          <div class="faq-answer">We combine 10+ years of experience with a results-driven approach, transparent reporting, and dedicated 24/7 support for every client.</div>
+          <button class="faq-question" aria-expanded="false">¿Ofrecen mantenimiento y soporte continuo? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" role="region">Sí. Ofrecemos planes de soporte flexibles respaldados por SLA: desde monitoreo básico y corrección de bugs hasta retenciones de ingeniería dedicada con ingenieros on-call 24/7. El éxito de tu producto no termina en el lanzamiento — tampoco el nuestro.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">How do I get started? <span class="faq-icon">+</span></button>
-          <div class="faq-answer">Simply reach out via our contact form or call us. We'll schedule a free consultation to understand your needs and propose the best strategy.</div>
+          <button class="faq-question" aria-expanded="false">¿Cómo garantizan la calidad del código y la seguridad? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" role="region">Todo proyecto sigue nuestro framework de calidad: pruebas automatizadas (unitarias, integración, e2e), revisiones de código obligatorias por pares, análisis estático, verificaciones de seguridad OWASP y despliegues por etapas con capacidad de rollback. También brindamos auditorías de seguridad como servicio independiente.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Do you offer ongoing support? <span class="faq-icon">+</span></button>
-          <div class="faq-answer">Yes! We provide 24/7 support for all our clients. Your success is our success, and we're always here to help.</div>
+          <button class="faq-question" aria-expanded="false">¿Cómo empiezo a trabajar con Nexa Tech? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" role="region">Completá el formulario de contacto o escribinos directamente. Agendamos una llamada de descubrimiento gratuita de 45 minutos para entender tus necesidades, evaluar la complejidad y proponerte el modelo de engagement más adecuado — precio fijo, tiempo y materiales, o equipo dedicado.</div>
         </div>
       </div>
     </div>
@@ -339,41 +531,41 @@
   <section class="blog section" id="blog">
     <div class="container">
       <div class="section-header">
-        <span class="label-lime">BLOG & ARTICLE</span>
-        <h2>Insights & Strategies for<br /><span class="lime">Digital Success</span></h2>
+        <span class="label-lime">INSIGHTS</span>
+        <h2>Perspectivas Tech<br /><span class="lime">de Nuestros Ingenieros</span></h2>
       </div>
       <div class="blog-grid">
         <div class="blog-card">
           <div class="blog-img-wrap">
-            <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efbc07?w=600&q=80" alt="Blog 1" />
-            <span class="tag-lime">Marketing</span>
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Arquitectura de microservicios con Docker y Kubernetes" loading="lazy" />
+            <span class="tag-lime">DevOps</span>
           </div>
           <div class="blog-info">
-            <h3>How to Generate More Leads Online</h3>
-            <p>Discover the most effective tactics to attract high-quality leads and grow your customer base in 2025.</p>
-            <a href="#" class="link-lime">Read More &rarr;</a>
+            <h3>Microservicios Escalables con Docker y Kubernetes</h3>
+            <p>Una inmersión profunda en los patrones de orquestación de contenedores que te permiten escalar de 10 a 10 millones de usuarios sin problemas.</p>
+            <a href="#" class="link-lime">Leer artículo &rarr;</a>
           </div>
         </div>
         <div class="blog-card">
           <div class="blog-img-wrap">
-            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80" alt="Blog 2" />
-            <span class="tag-lime">Web Design</span>
+            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="Inteligencia artificial y machine learning en aplicaciones empresariales" loading="lazy" />
+            <span class="tag-lime">IA &amp; ML</span>
           </div>
           <div class="blog-info">
-            <h3>Web Design Trends That Boost Conversions</h3>
-            <p>The latest design principles that keep visitors engaged and guide them towards taking action on your site.</p>
-            <a href="#" class="link-lime">Read More &rarr;</a>
+            <h3>IA en la Empresa: Aplicaciones Prácticas Más Allá del Hype</h3>
+            <p>Cortamos el ruido para enfocarnos en las implementaciones de IA que generan ROI medible en negocios reales en 2025 y más allá.</p>
+            <a href="#" class="link-lime">Leer artículo &rarr;</a>
           </div>
         </div>
         <div class="blog-card">
           <div class="blog-img-wrap">
-            <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&q=80" alt="Blog 3" />
-            <span class="tag-lime">Marketing</span>
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80" alt="Desarrollo cloud-native y arquitectura moderna de infraestructura" loading="lazy" />
+            <span class="tag-lime">Cloud</span>
           </div>
           <div class="blog-info">
-            <h3>Best Social Media Marketing Tips for Startups</h3>
-            <p>Practical strategies to build a strong social presence from scratch without a massive budget.</p>
-            <a href="#" class="link-lime">Read More &rarr;</a>
+            <h3>Cloud-Native: Por Qué el "Lift &amp; Shift" No Alcanza</h3>
+            <p>Por qué migrar tu infraestructura a la nube sin repensar tu arquitectura te deja sin aprovechar rendimiento y ahorro de costos.</p>
+            <a href="#" class="link-lime">Leer artículo &rarr;</a>
           </div>
         </div>
       </div>
@@ -384,13 +576,14 @@
   <section class="newsletter">
     <div class="container newsletter-inner">
       <div>
-        <span class="label-lime">JOIN NOW</span>
-        <h2>Subscribe to our <span class="lime">Newsletter</span></h2>
-        <p>Get the latest digital marketing insights delivered to your inbox.</p>
+        <span class="label-lime">MANTENTE ACTUALIZADO</span>
+        <h2>Insights Tech en tu <span class="lime">Bandeja</span></h2>
+        <p>Resumen mensual de mejores prácticas de ingeniería, tendencias del sector y casos de estudio de nuestro equipo.</p>
       </div>
-      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-        <input type="email" placeholder="Enter your email address" required />
-        <button type="submit" class="btn btn-lime">SUBMIT NOW</button>
+      <form class="newsletter-form" id="newsletterForm" novalidate>
+        <label for="newsletter-email" class="sr-only">Correo electrónico</label>
+        <input type="email" id="newsletter-email" name="email" placeholder="Tu correo de trabajo" required autocomplete="email" />
+        <button type="submit" class="btn btn-lime">SUSCRIBIRME</button>
       </form>
     </div>
   </section>
@@ -399,82 +592,122 @@
   <section class="contact section" id="contact">
     <div class="container contact-inner">
       <div class="contact-text">
-        <span class="label-lime">GET IN TOUCH</span>
-        <h2>Ready to Grow<br />Your <span class="lime">Business?</span></h2>
-        <p>Let's talk about your goals and build a strategy that gets results. Our team is ready to help you succeed online.</p>
+        <span class="label-lime">HABLEMOS</span>
+        <h2>¿Listo para Construir<br />Algo <span class="lime">Extraordinario?</span></h2>
+        <p>Contanos sobre tu proyecto. Te respondemos en menos de un día hábil con un plan para hacerlo realidad.</p>
         <div class="contact-info">
           <div class="contact-info-item">
-            <span class="info-icon">✉</span>
-            <span>hello@nexaagency.com</span>
+            <span class="info-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <a href="mailto:hola@nexatech.io">hola@nexatech.io</a>
           </div>
           <div class="contact-info-item">
-            <span class="info-icon">✆</span>
-            <span>+1 (800) 123-4567</span>
+            <span class="info-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.36 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.18-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <a href="tel:+18001234567">+1 (800) 123-4567</a>
           </div>
           <div class="contact-info-item">
-            <span class="info-icon">⊕</span>
-            <span>New York, NY 10001</span>
+            <span class="info-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span>Nueva York · Londres · Ciudad de México</span>
           </div>
         </div>
       </div>
-      <form class="contact-form" onsubmit="handleContact(event)">
+      <form class="contact-form" id="contactForm" novalidate>
         <div class="form-row">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
+          <div class="form-field">
+            <label for="contact-name" class="sr-only">Tu nombre</label>
+            <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <label for="contact-email" class="sr-only">Tu correo</label>
+            <input type="email" id="contact-email" name="email" placeholder="Correo de trabajo" required autocomplete="email" />
+          </div>
         </div>
-        <input type="text" placeholder="Subject" />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn btn-lime">SEND MESSAGE</button>
+        <div class="form-field">
+          <label for="contact-service" class="sr-only">Servicio de interés</label>
+          <select id="contact-service" name="service">
+            <option value="" disabled selected>Servicio de interés</option>
+            <option value="software">Desarrollo de Software a Medida</option>
+            <option value="cloud">Cloud e Infraestructura</option>
+            <option value="consulting">Consultoría IT y Estrategia</option>
+            <option value="ai">IA y Soluciones de Datos</option>
+            <option value="security">Ciberseguridad</option>
+            <option value="transformation">Transformación Digital</option>
+            <option value="other">Otro</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="contact-message" class="sr-only">Tu mensaje</label>
+          <textarea id="contact-message" name="message" placeholder="Contanos sobre tu proyecto — alcance, tiempos, objetivos..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-lime">ENVIAR MENSAJE</button>
       </form>
     </div>
   </section>
+
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="#" class="logo">
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+        <a href="#" class="logo" aria-label="Nexa Tech inicio">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
             <rect x="2" y="8" width="13" height="13" rx="2" fill="#c6ff00"/>
             <rect x="17" y="8" width="13" height="13" rx="2" fill="#c6ff00" opacity="0.6"/>
             <rect x="2" y="23" width="13" height="7" rx="2" fill="#c6ff00" opacity="0.4"/>
             <rect x="17" y="23" width="13" height="7" rx="2" fill="#c6ff00"/>
           </svg>
-          <span>NEXA</span>
+          <span>NEXA<span class="logo-tech">TECH</span></span>
         </a>
-        <p>Smart digital solutions for businesses that want to grow. We combine strategy, creativity and technology.</p>
+        <p>Consultoría y desarrollo tecnológico para empresas que construyen el futuro. Estrategia, ingeniería y ejecución — todo bajo un mismo techo.</p>
         <div class="social-links">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Twitter">𝕏</a>
-          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="GitHub">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter / X">𝕏</a>
         </div>
       </div>
       <div class="footer-links">
         <div>
-          <h4>Company</h4>
-          <a href="#about">About Us</a>
-          <a href="#portfolio">Portfolio</a>
+          <h4>Empresa</h4>
+          <a href="#about">Quiénes somos</a>
+          <a href="#process">Cómo trabajamos</a>
+          <a href="#portfolio">Casos de éxito</a>
           <a href="#blog">Blog</a>
         </div>
         <div>
-          <h4>Services</h4>
-          <a href="#services">Digital Marketing</a>
-          <a href="#services">Web Design</a>
-          <a href="#services">Branding</a>
-          <a href="#services">SEO</a>
+          <h4>Servicios</h4>
+          <a href="#services">Desarrollo de Software</a>
+          <a href="#services">Cloud &amp; DevOps</a>
+          <a href="#services">Consultoría IT</a>
+          <a href="#services">IA &amp; Datos</a>
+          <a href="#services">Ciberseguridad</a>
         </div>
         <div>
-          <h4>Contact</h4>
-          <a href="mailto:hello@nexaagency.com">hello@nexaagency.com</a>
+          <h4>Contacto</h4>
+          <a href="mailto:hola@nexatech.io">hola@nexatech.io</a>
           <a href="tel:+18001234567">+1 (800) 123-4567</a>
-          <a href="#contact">Get a Quote</a>
+          <a href="#contact">Iniciar un proyecto</a>
+          <a href="#contact">Solicitar cotización</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright &copy; 2025 Nexa. All Rights Reserved.</p>
+      <p>Copyright &copy; 2025 Nexa Tech. Todos los derechos reservados.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos de servicio</a>
+      </div>
     </div>
   </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
 
   <script src="script.js"></script>
 </body>
