@@ -6,30 +6,38 @@
   <title>Nexa – Smart Digital Solutions</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <div class="container nav-inner">
-      <a href="#" class="logo">Nexa</a>
-      <nav class="nav-links">
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
+      <a href="#" class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="8" width="13" height="13" rx="2" fill="#c6ff00"/>
+          <rect x="17" y="8" width="13" height="13" rx="2" fill="#c6ff00" opacity="0.6"/>
+          <rect x="2" y="23" width="13" height="7" rx="2" fill="#c6ff00" opacity="0.4"/>
+          <rect x="17" y="23" width="13" height="7" rx="2" fill="#c6ff00"/>
+        </svg>
+        <span>NEXA</span>
+      </a>
+      <nav class="nav-pill">
+        <a href="#about">HOMEPAGE</a>
+        <a href="#about">ABOUT US <span class="arrow">&#8964;</span></a>
+        <a href="#services">SERVICES <span class="arrow">&#8964;</span></a>
+        <a href="#portfolio">PAGES <span class="arrow">&#8964;</span></a>
+        <a href="#contact">CONTACT US</a>
       </nav>
-      <a href="#contact" class="btn btn-dark">Get in touch</a>
+      <a href="#contact" class="btn btn-lime">GET IN TOUCH</a>
       <button class="hamburger" id="hamburger">&#9776;</button>
     </div>
     <nav class="mobile-menu" id="mobileMenu">
+      <a href="#about">Homepage</a>
       <a href="#about">About Us</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Contact Us</a>
     </nav>
   </header>
 
@@ -37,29 +45,72 @@
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
-        <span class="badge">Digital Agency</span>
-        <h1>Smart Digital Solutions<br />for <span class="accent">Maximum Impact</span></h1>
-        <p>We craft powerful digital experiences that grow your brand, generate leads, and drive real results. Partner with experts who care about your success.</p>
+        <h1>SMART DIGITAL<br />SOLUTIONS FOR<br /><span class="hero-muted">MAXIMUM IMPACT</span></h1>
         <div class="hero-btns">
-          <a href="#contact" class="btn btn-dark">Get Started</a>
-          <a href="#about" class="btn btn-outline">Read More</a>
+          <a href="#contact" class="btn btn-lime btn-lg">GET STARTED</a>
+          <a href="#about" class="btn-ghost">READ MORE <span class="circle-arrow">&#8594;</span></a>
         </div>
       </div>
-      <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Digital team" />
+      <div class="hero-visual">
+        <svg class="wireframe-cube" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="1">
+          <!-- Front face -->
+          <polygon points="150,350 350,350 350,150 150,150" stroke="white" stroke-opacity="0.7"/>
+          <!-- Back face offset -->
+          <polygon points="200,400 400,400 400,200 200,200" stroke="white" stroke-opacity="0.4"/>
+          <!-- Connecting lines -->
+          <line x1="150" y1="150" x2="200" y2="200" stroke-opacity="0.5"/>
+          <line x1="350" y1="150" x2="400" y2="200" stroke-opacity="0.5"/>
+          <line x1="350" y1="350" x2="400" y2="400" stroke-opacity="0.5"/>
+          <line x1="150" y1="350" x2="200" y2="400" stroke-opacity="0.5"/>
+          <!-- Grid lines front face -->
+          <line x1="150" y1="217" x2="350" y2="217" stroke-opacity="0.3"/>
+          <line x1="150" y1="283" x2="350" y2="283" stroke-opacity="0.3"/>
+          <line x1="217" y1="150" x2="217" y2="350" stroke-opacity="0.3"/>
+          <line x1="283" y1="150" x2="283" y2="350" stroke-opacity="0.3"/>
+          <!-- Grid lines top face -->
+          <line x1="183" y1="183" x2="350" y2="150" stroke-opacity="0.25"/>
+          <line x1="217" y1="150" x2="267" y2="200" stroke-opacity="0.25"/>
+          <line x1="283" y1="150" x2="333" y2="200" stroke-opacity="0.25"/>
+          <!-- Grid lines right face -->
+          <line x1="350" y1="183" x2="400" y2="233" stroke-opacity="0.25"/>
+          <line x1="350" y1="250" x2="400" y2="300" stroke-opacity="0.25"/>
+          <line x1="350" y1="317" x2="400" y2="367" stroke-opacity="0.25"/>
+          <!-- Warped/distorted overlay lines -->
+          <path d="M 120,180 Q 250,100 400,180" stroke-opacity="0.15" stroke-width="0.8"/>
+          <path d="M 120,250 Q 250,170 420,250" stroke-opacity="0.12" stroke-width="0.8"/>
+          <path d="M 120,320 Q 250,240 400,320" stroke-opacity="0.1" stroke-width="0.8"/>
+        </svg>
       </div>
     </div>
   </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span>DIGITAL MARKETING</span><span class="dot">✦</span>
+      <span>WEB DEVELOPMENT</span><span class="dot">✦</span>
+      <span>BRANDING</span><span class="dot">✦</span>
+      <span>SEO STRATEGY</span><span class="dot">✦</span>
+      <span>SOCIAL MEDIA</span><span class="dot">✦</span>
+      <span>LEAD GENERATION</span><span class="dot">✦</span>
+      <span>DIGITAL MARKETING</span><span class="dot">✦</span>
+      <span>WEB DEVELOPMENT</span><span class="dot">✦</span>
+      <span>BRANDING</span><span class="dot">✦</span>
+      <span>SEO STRATEGY</span><span class="dot">✦</span>
+      <span>SOCIAL MEDIA</span><span class="dot">✦</span>
+      <span>LEAD GENERATION</span><span class="dot">✦</span>
+    </div>
+  </div>
 
   <!-- ===== STATS ===== -->
   <section class="stats">
     <div class="container stats-grid">
       <div class="stat-item">
-        <h2>50+</h2>
-        <p>Countries</p>
+        <h2>50<span class="lime">+</span></h2>
+        <p>Countries Served</p>
       </div>
       <div class="stat-item">
-        <h2>200+</h2>
+        <h2>200<span class="lime">+</span></h2>
         <p>Royal Partners</p>
       </div>
       <div class="stat-item">
@@ -67,7 +118,7 @@
         <p>Support Available</p>
       </div>
       <div class="stat-item">
-        <h2>10+</h2>
+        <h2>10<span class="lime">+</span></h2>
         <p>Years Experience</p>
       </div>
     </div>
@@ -78,10 +129,14 @@
     <div class="container about-inner">
       <div class="about-image">
         <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Team working" />
+        <div class="about-badge">
+          <span class="badge-num">10<span class="lime">+</span></span>
+          <span class="badge-text">Years of Experience</span>
+        </div>
       </div>
       <div class="about-text">
-        <span class="label">All you need to know</span>
-        <h2>Your Partner in Growth</h2>
+        <span class="label-lime">ALL YOU NEED TO KNOW</span>
+        <h2>Your Partner<br />in <span class="lime">Growth</span></h2>
         <p>We combine strategy, creativity, and technology to build digital solutions that truly work. With over 10 years of experience, we've helped hundreds of businesses grow their online presence and achieve measurable results.</p>
         <ul class="check-list">
           <li>Tailored Solutions for every business</li>
@@ -89,7 +144,7 @@
           <li>Lead Generation &amp; Growth Hacking</li>
           <li>24/7 Dedicated Support</li>
         </ul>
-        <a href="#contact" class="btn btn-dark">Get Quotes</a>
+        <a href="#contact" class="btn btn-lime">GET QUOTES</a>
       </div>
     </div>
   </section>
@@ -98,46 +153,46 @@
   <section class="services section" id="services">
     <div class="container">
       <div class="section-header">
-        <span class="label">What We Do</span>
-        <h2>Our Core Services</h2>
+        <span class="label-lime">WHAT WE DO</span>
+        <h2>Our Core <span class="lime">Services</span></h2>
         <p>Everything your business needs to thrive online — strategy, design, development, and marketing.</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">📈</div>
+          <div class="service-num">01</div>
           <h3>Digital Marketing Strategy</h3>
           <p>Data-driven campaigns that reach the right audience at the right time and convert them into loyal customers.</p>
-          <a href="#contact" class="link">Hire us now &rarr;</a>
+          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
         </div>
         <div class="service-card">
-          <div class="service-icon">💻</div>
+          <div class="service-num">02</div>
           <h3>Website Design & Development</h3>
           <p>High-performance websites built for speed, accessibility, and conversion — designed to impress and built to last.</p>
-          <a href="#contact" class="link">Hire us now &rarr;</a>
+          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
         </div>
         <div class="service-card">
-          <div class="service-icon">🎨</div>
+          <div class="service-num">03</div>
           <h3>Branding & Graphic Design</h3>
           <p>Memorable brand identities that communicate your values and set you apart from the competition.</p>
-          <a href="#contact" class="link">Hire us now &rarr;</a>
+          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
         </div>
         <div class="service-card">
-          <div class="service-icon">📱</div>
+          <div class="service-num">04</div>
           <h3>Social Media Management</h3>
           <p>Consistent, engaging content across all platforms that builds community and drives meaningful engagement.</p>
-          <a href="#contact" class="link">Hire us now &rarr;</a>
+          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
         </div>
         <div class="service-card">
-          <div class="service-icon">🚀</div>
+          <div class="service-num">05</div>
           <h3>Lead Generation & Growth Hacking</h3>
           <p>Innovative tactics that fuel rapid growth, attract qualified leads, and maximize your ROI.</p>
-          <a href="#contact" class="link">Hire us now &rarr;</a>
+          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
         </div>
         <div class="service-card">
-          <div class="service-icon">🔍</div>
+          <div class="service-num">06</div>
           <h3>SEO & Content Marketing</h3>
           <p>Rank higher, get found faster, and convert organic traffic into real business with our proven SEO strategies.</p>
-          <a href="#contact" class="link">Hire us now &rarr;</a>
+          <a href="#contact" class="link-lime">Hire us now &rarr;</a>
         </div>
       </div>
     </div>
@@ -147,44 +202,40 @@
   <section class="portfolio section" id="portfolio">
     <div class="container">
       <div class="section-header">
-        <span class="label">Our Work</span>
-        <h2>Elevating Brands with Powerful Digital Experiences</h2>
+        <span class="label-lime">OUR WORK</span>
+        <h2>Elevating Brands with Powerful<br /><span class="lime">Digital Experiences</span></h2>
       </div>
       <div class="portfolio-grid">
         <div class="portfolio-card">
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80" alt="Case study 1" />
-          <div class="portfolio-info">
-            <span class="tag">E-Commerce</span>
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="Case study 1" />
+          <div class="portfolio-overlay">
+            <span class="tag-lime">E-Commerce</span>
             <h3>Boosting Online Sales by 300%</h3>
-            <p>A comprehensive digital overhaul that transformed a struggling store into a high-converting machine.</p>
-            <a href="#" class="link">Read More &rarr;</a>
+            <a href="#" class="link-lime">Read More &rarr;</a>
           </div>
         </div>
         <div class="portfolio-card">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&q=80" alt="Case study 2" />
-          <div class="portfolio-info">
-            <span class="tag">Branding</span>
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Case study 2" />
+          <div class="portfolio-overlay">
+            <span class="tag-lime">Branding</span>
             <h3>Transforming a Local Business into a Global Brand</h3>
-            <p>From local shop to international presence through strategic branding and digital marketing.</p>
-            <a href="#" class="link">Read More &rarr;</a>
+            <a href="#" class="link-lime">Read More &rarr;</a>
           </div>
         </div>
         <div class="portfolio-card">
-          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&q=80" alt="Case study 3" />
-          <div class="portfolio-info">
-            <span class="tag">Social Media</span>
+          <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&q=80" alt="Case study 3" />
+          <div class="portfolio-overlay">
+            <span class="tag-lime">Social Media</span>
             <h3>Viral Marketing Success</h3>
-            <p>A creative campaign that reached 10M+ people organically and generated massive brand awareness.</p>
-            <a href="#" class="link">Read More &rarr;</a>
+            <a href="#" class="link-lime">Read More &rarr;</a>
           </div>
         </div>
         <div class="portfolio-card">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" alt="Case study 4" />
-          <div class="portfolio-info">
-            <span class="tag">SaaS</span>
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Case study 4" />
+          <div class="portfolio-overlay">
+            <span class="tag-lime">SaaS</span>
             <h3>Scaling Up SaaS Growth</h3>
-            <p>Helped a SaaS startup grow from 500 to 50,000 users in 12 months through targeted growth hacking.</p>
-            <a href="#" class="link">Read More &rarr;</a>
+            <a href="#" class="link-lime">Read More &rarr;</a>
           </div>
         </div>
       </div>
@@ -195,8 +246,8 @@
   <section class="testimonials section">
     <div class="container">
       <div class="section-header">
-        <span class="label">Client Feedback</span>
-        <h2>Proven Success Through Client Feedback</h2>
+        <span class="label-lime">CLIENT FEEDBACK</span>
+        <h2>Proven Success Through<br /><span class="lime">Client Feedback</span></h2>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card">
@@ -249,35 +300,35 @@
 
   <!-- ===== FAQ ===== -->
   <section class="faq section">
-    <div class="container faq-inner">
+    <div class="container faq-wrap">
       <div class="section-header">
-        <span class="label">FAQ</span>
-        <h2>Frequently Asked Questions</h2>
+        <span class="label-lime">FAQ</span>
+        <h2>Frequently Asked <span class="lime">Questions</span></h2>
         <p>Helping You Understand Our Services Better!</p>
       </div>
       <div class="faq-list">
         <div class="faq-item">
-          <button class="faq-question">What services does Nexa offer? <span>+</span></button>
+          <button class="faq-question">What services does Nexa offer? <span class="faq-icon">+</span></button>
           <div class="faq-answer">We offer digital marketing strategy, website design & development, branding, social media management, SEO, and lead generation services.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">How long does it take to see results? <span>+</span></button>
+          <button class="faq-question">How long does it take to see results? <span class="faq-icon">+</span></button>
           <div class="faq-answer">Results vary by service. SEO typically shows significant improvements within 3-6 months, while paid campaigns can generate results immediately.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Can you customize services for my business? <span>+</span></button>
+          <button class="faq-question">Can you customize services for my business? <span class="faq-icon">+</span></button>
           <div class="faq-answer">Absolutely. Every strategy we develop is tailored specifically to your business goals, industry, and target audience.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">What makes Nexa different from other agencies? <span>+</span></button>
+          <button class="faq-question">What makes Nexa different from other agencies? <span class="faq-icon">+</span></button>
           <div class="faq-answer">We combine 10+ years of experience with a results-driven approach, transparent reporting, and dedicated 24/7 support for every client.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">How do I get started? <span>+</span></button>
+          <button class="faq-question">How do I get started? <span class="faq-icon">+</span></button>
           <div class="faq-answer">Simply reach out via our contact form or call us. We'll schedule a free consultation to understand your needs and propose the best strategy.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Do you offer ongoing support? <span>+</span></button>
+          <button class="faq-question">Do you offer ongoing support? <span class="faq-icon">+</span></button>
           <div class="faq-answer">Yes! We provide 24/7 support for all our clients. Your success is our success, and we're always here to help.</div>
         </div>
       </div>
@@ -288,35 +339,41 @@
   <section class="blog section" id="blog">
     <div class="container">
       <div class="section-header">
-        <span class="label">Blog & Article</span>
-        <h2>Insights & Strategies for Digital Success</h2>
+        <span class="label-lime">BLOG & ARTICLE</span>
+        <h2>Insights & Strategies for<br /><span class="lime">Digital Success</span></h2>
       </div>
       <div class="blog-grid">
         <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efbc07?w=500&q=80" alt="Blog 1" />
+          <div class="blog-img-wrap">
+            <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efbc07?w=600&q=80" alt="Blog 1" />
+            <span class="tag-lime">Marketing</span>
+          </div>
           <div class="blog-info">
-            <span class="tag">Marketing</span>
             <h3>How to Generate More Leads Online</h3>
             <p>Discover the most effective tactics to attract high-quality leads and grow your customer base in 2025.</p>
-            <a href="#" class="link">Read More &rarr;</a>
+            <a href="#" class="link-lime">Read More &rarr;</a>
           </div>
         </div>
         <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=500&q=80" alt="Blog 2" />
+          <div class="blog-img-wrap">
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80" alt="Blog 2" />
+            <span class="tag-lime">Web Design</span>
+          </div>
           <div class="blog-info">
-            <span class="tag">Web Design</span>
             <h3>Web Design Trends That Boost Conversions</h3>
             <p>The latest design principles that keep visitors engaged and guide them towards taking action on your site.</p>
-            <a href="#" class="link">Read More &rarr;</a>
+            <a href="#" class="link-lime">Read More &rarr;</a>
           </div>
         </div>
         <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=500&q=80" alt="Blog 3" />
+          <div class="blog-img-wrap">
+            <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&q=80" alt="Blog 3" />
+            <span class="tag-lime">Marketing</span>
+          </div>
           <div class="blog-info">
-            <span class="tag">Marketing</span>
             <h3>Best Social Media Marketing Tips for Startups</h3>
             <p>Practical strategies to build a strong social presence from scratch without a massive budget.</p>
-            <a href="#" class="link">Read More &rarr;</a>
+            <a href="#" class="link-lime">Read More &rarr;</a>
           </div>
         </div>
       </div>
@@ -327,12 +384,13 @@
   <section class="newsletter">
     <div class="container newsletter-inner">
       <div>
-        <h2>Join Now</h2>
-        <p>Subscribe to our newsletter and get the latest digital marketing insights.</p>
+        <span class="label-lime">JOIN NOW</span>
+        <h2>Subscribe to our <span class="lime">Newsletter</span></h2>
+        <p>Get the latest digital marketing insights delivered to your inbox.</p>
       </div>
       <form class="newsletter-form" onsubmit="handleNewsletter(event)">
         <input type="email" placeholder="Enter your email address" required />
-        <button type="submit" class="btn btn-dark">Submit Now</button>
+        <button type="submit" class="btn btn-lime">SUBMIT NOW</button>
       </form>
     </div>
   </section>
@@ -341,21 +399,32 @@
   <section class="contact section" id="contact">
     <div class="container contact-inner">
       <div class="contact-text">
-        <span class="label">Get In Touch</span>
-        <h2>Ready to Grow Your Business?</h2>
+        <span class="label-lime">GET IN TOUCH</span>
+        <h2>Ready to Grow<br />Your <span class="lime">Business?</span></h2>
         <p>Let's talk about your goals and build a strategy that gets results. Our team is ready to help you succeed online.</p>
         <div class="contact-info">
-          <p>📧 hello@nexaagency.com</p>
-          <p>📞 +1 (800) 123-4567</p>
-          <p>📍 New York, NY 10001</p>
+          <div class="contact-info-item">
+            <span class="info-icon">✉</span>
+            <span>hello@nexaagency.com</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="info-icon">✆</span>
+            <span>+1 (800) 123-4567</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="info-icon">⊕</span>
+            <span>New York, NY 10001</span>
+          </div>
         </div>
       </div>
       <form class="contact-form" onsubmit="handleContact(event)">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+        </div>
         <input type="text" placeholder="Subject" />
         <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn btn-dark">Send Message</button>
+        <button type="submit" class="btn btn-lime">SEND MESSAGE</button>
       </form>
     </div>
   </section>
@@ -364,12 +433,20 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="#" class="logo logo-white">Nexa</a>
+        <a href="#" class="logo">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <rect x="2" y="8" width="13" height="13" rx="2" fill="#c6ff00"/>
+            <rect x="17" y="8" width="13" height="13" rx="2" fill="#c6ff00" opacity="0.6"/>
+            <rect x="2" y="23" width="13" height="7" rx="2" fill="#c6ff00" opacity="0.4"/>
+            <rect x="17" y="23" width="13" height="7" rx="2" fill="#c6ff00"/>
+          </svg>
+          <span>NEXA</span>
+        </a>
         <p>Smart digital solutions for businesses that want to grow. We combine strategy, creativity and technology.</p>
         <div class="social-links">
           <a href="#" aria-label="Facebook">f</a>
           <a href="#" aria-label="Twitter">𝕏</a>
-          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="Instagram">in</a>
         </div>
       </div>
       <div class="footer-links">
