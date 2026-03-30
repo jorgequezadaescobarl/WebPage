@@ -284,6 +284,20 @@ p  { color: var(--gray); line-height: 1.75; }
   height: 700px;
   background: radial-gradient(circle, rgba(198,255,0,0.07) 0%, transparent 65%);
   pointer-events: none;
+  animation: glow-breathe 6s ease-in-out infinite;
+}
+
+@keyframes glow-breathe {
+  0%, 100% { transform: scale(1);    opacity: 1; }
+  50%       { transform: scale(1.18); opacity: 0.6; }
+}
+
+/* Hero canvas particles */
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-inner {
@@ -295,8 +309,70 @@ p  { color: var(--gray); line-height: 1.75; }
   z-index: 1;
 }
 
+/* ===== HERO ENTRANCE ANIMATIONS ===== */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in-right {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.hero-badge  { animation: fade-up 0.6s ease 0.15s both; }
+.hero-text h1 { animation: fade-up 0.75s ease 0.3s both; }
+.hero-sub    { animation: fade-up 0.7s ease 0.5s both; }
+.hero-btns   { animation: fade-up 0.7s ease 0.65s both; }
+.hero-scroll { animation: fade-up 0.7s ease 0.85s both; }
+
+/* Code window entrance + float + glow */
+.code-window {
+  animation: fade-in-right 0.9s ease 0.4s both, float 6s ease-in-out 1.3s infinite, code-glow 5s ease-in-out 1.3s infinite;
+}
+
+@keyframes code-glow {
+  0%, 100% {
+    box-shadow:
+      0 32px 80px rgba(0,0,0,0.6),
+      0 0 0 1px rgba(255,255,255,0.04),
+      0 0 80px rgba(198,255,0,0.05);
+  }
+  50% {
+    box-shadow:
+      0 32px 80px rgba(0,0,0,0.6),
+      0 0 0 1px rgba(198,255,0,0.12),
+      0 0 140px rgba(198,255,0,0.14),
+      0 0 40px rgba(198,255,0,0.1);
+  }
+}
+
+/* Scan line sweeping down the code window */
+.code-window::after {
+  content: '';
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent 0%, rgba(198,255,0,0.5) 50%, transparent 100%);
+  pointer-events: none;
+  animation: scan-line 4s ease-in-out 1.5s infinite;
+  z-index: 10;
+}
+
+@keyframes scan-line {
+  0%   { top: 44px;  opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 0.6; }
+  100% { top: 100%;  opacity: 0; }
+}
+
+/* Floating cards entrance */
+.hero-card-1 { animation: fade-up 0.7s ease 1.1s both, float 8s ease-in-out 1.8s infinite reverse; }
+.hero-card-2 { animation: fade-up 0.7s ease 1.3s both, float 7s ease-in-out 2s infinite; }
+
 /* Hero availability badge */
-.hero-badge {
+.hero-badge  {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1268,8 +1344,11 @@ p  { color: var(--gray); line-height: 1.75; }
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
-  .code-window    { animation: none; }
+  .code-window    { animation: none; box-shadow: 0 32px 80px rgba(0,0,0,0.6); }
+  .code-window::after { animation: none; display: none; }
+  .hero-glow      { animation: none; }
   .hero-card      { animation: none; }
+  .hero-badge, .hero-text h1, .hero-sub, .hero-btns, .hero-scroll { animation: none; opacity: 1; transform: none; }
   .marquee-track  { animation: none; }
   .scroll-line::after { animation: none; }
   .badge-dot, .hc-dot { animation: none; }
