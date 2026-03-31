@@ -94,21 +94,224 @@ function showToast(message) {
   }, 4000);
 }
 
+// ===== CONFIG: reemplazá estos IDs con los tuyos de formspree.io =====
+const FORMSPREE_CONTACT  = 'https://formspree.io/f/YOUR_CONTACT_ID';
+const FORMSPREE_BOOKING  = 'https://formspree.io/f/YOUR_BOOKING_ID';
+const FORMSPREE_NEWSLETTER = 'https://formspree.io/f/YOUR_NEWSLETTER_ID';
+
+// ===== HELPER: enviar formulario via Formspree =====
+async function submitToFormspree(url, formEl, btnEl, successMsg) {
+  const originalText = btnEl.textContent;
+  btnEl.textContent = 'ENVIANDO...';
+  btnEl.disabled = true;
+
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      body: new FormData(formEl),
+      headers: { Accept: 'application/json' },
+    });
+    if (res.ok) {
+      showToast(successMsg);
+      return true;
+    } else {
+      const data = await res.json().catch(() => ({}));
+      const errMsg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Error al enviar. Intentá de nuevo.';
+      showToast('Error: ' + errMsg);
+      return false;
+    }
+  } catch {
+    showToast('Sin conexión. Revisá tu internet e intentá de nuevo.');
+    return false;
+  } finally {
+    btnEl.textContent = originalText;
+    btnEl.disabled = false;
+  }
+}
+
 // ===== NEWSLETTER FORM =====
-document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+document.getElementById('newsletterForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const input = e.target.querySelector('input');
-  showToast(`¡Suscripción exitosa! Te enviaremos novedades a ${input.value}`);
-  input.value = '';
+  const btn = e.target.querySelector('button');
+  const email = input.value;
+  const ok = await submitToFormspree(FORMSPREE_NEWSLETTER, e.target, btn, `¡Suscripción exitosa! Te enviaremos novedades a ${email}`);
+  if (ok) input.value = '';
 });
 
 // ===== CONTACT FORM =====
-document.getElementById('contactForm').addEventListener('submit', (e) => {
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  showToast("¡Mensaje enviado! Te respondemos en menos de un día hábil.");
-  e.target.reset();
-  if (serviceSelect) serviceSelect.classList.remove('filled');
+  const btn = e.target.querySelector('button[type="submit"]');
+  const ok = await submitToFormspree(FORMSPREE_CONTACT, e.target, btn, '¡Mensaje enviado! Te respondemos en menos de un día hábil.');
+  if (ok) {
+    e.target.reset();
+    if (serviceSelect) serviceSelect.classList.remove('filled');
+  }
 });
+
+// ===== CONTACT TABS =====
+document.querySelectorAll('.contact-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.contact-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+
+    const target = tab.dataset.tab;
+    document.getElementById('messagePanel').hidden = target !== 'message';
+    document.getElementById('bookingPanel').hidden = target !== 'booking';
+  });
+});
+
+// ===== CALENDARIO DE CITAS =====
+(function () {
+  const SLOTS = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00'];
+  let currentYear, currentMonth, selectedDate, selectedSlot;
+
+  const calDays   = document.getElementById('calDays');
+  const calLabel  = document.getElementById('calMonthLabel');
+  const calPrev   = document.getElementById('calPrev');
+  const calNext   = document.getElementById('calNext');
+  const step1     = document.getElementById('calStep1');
+  const step2     = document.getElementById('calStep2');
+  const step3     = document.getElementById('calStep3');
+
+  if (!calDays) return;
+
+  const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const now = new Date();
+  currentYear  = now.getFullYear();
+  currentMonth = now.getMonth();
+
+  function renderCalendar() {
+    calLabel.textContent = `${MESES[currentMonth]} ${currentYear}`;
+    calDays.innerHTML = '';
+
+    const firstDay = new Date(currentYear, currentMonth, 1);
+    // Lunes = 0
+    let startDow = firstDay.getDay() - 1;
+    if (startDow < 0) startDow = 6;
+
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const minDate = new Date(today.getTime() + 24 * 60 * 60 * 1000); // mínimo mañana
+
+    // Celdas vacías al inicio
+    for (let i = 0; i < startDow; i++) {
+      const empty = document.createElement('span');
+      empty.className = 'cal-day empty';
+      calDays.appendChild(empty);
+    }
+
+    for (let d = 1; d <= daysInMonth; d++) {
+      const date = new Date(currentYear, currentMonth, d);
+      const dow = date.getDay(); // 0=dom, 6=sáb
+      const isWeekend = dow === 0 || dow === 6;
+      const isPast = date < minDate;
+      const btn = document.createElement('button');
+      btn.className = 'cal-day' + (isWeekend || isPast ? ' disabled' : '');
+      btn.textContent = d;
+      btn.setAttribute('role', 'gridcell');
+      if (isWeekend || isPast) {
+        btn.disabled = true;
+        btn.setAttribute('aria-disabled', 'true');
+      } else {
+        btn.addEventListener('click', () => selectDate(date));
+      }
+      calDays.appendChild(btn);
+    }
+
+    // Prev: no ir antes del mes actual
+    calPrev.disabled = currentYear === now.getFullYear() && currentMonth === now.getMonth();
+  }
+
+  function selectDate(date) {
+    selectedDate = date;
+    step1.hidden = true;
+    step2.hidden = false;
+
+    const label = document.getElementById('calSelectedDateLabel');
+    const dias  = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+    label.textContent = `${dias[date.getDay()]} ${date.getDate()} de ${MESES[date.getMonth()]} ${date.getFullYear()}`;
+
+    renderSlots();
+  }
+
+  function renderSlots() {
+    const container = document.getElementById('calSlots');
+    container.innerHTML = '';
+    SLOTS.forEach(slot => {
+      const btn = document.createElement('button');
+      btn.className = 'cal-slot-btn';
+      btn.textContent = slot;
+      btn.setAttribute('role', 'listitem');
+      btn.addEventListener('click', () => selectSlot(slot));
+      container.appendChild(btn);
+    });
+  }
+
+  function selectSlot(slot) {
+    selectedSlot = slot;
+    step2.hidden = true;
+    step3.hidden = false;
+
+    const dias  = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+    const dateStr = `${dias[selectedDate.getDay()]} ${selectedDate.getDate()} de ${MESES[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
+
+    document.getElementById('calBookingSummary').innerHTML =
+      `<div class="cal-summary-item"><span>📅</span> ${dateStr}</div>` +
+      `<div class="cal-summary-item"><span>🕐</span> ${slot} — ${addHour(slot)} (1 hora)</div>`;
+
+    document.getElementById('bookingDate').value = dateStr;
+    document.getElementById('bookingSlot').value = `${slot} — ${addHour(slot)}`;
+    document.getElementById('bookingSubject').value = `Reunión agendada: ${dateStr} ${slot}`;
+  }
+
+  function addHour(slot) {
+    const [h, m] = slot.split(':').map(Number);
+    return `${String(h + 1).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+  }
+
+  calPrev.addEventListener('click', () => {
+    if (currentMonth === 0) { currentMonth = 11; currentYear--; }
+    else currentMonth--;
+    renderCalendar();
+  });
+
+  calNext.addEventListener('click', () => {
+    if (currentMonth === 11) { currentMonth = 0; currentYear++; }
+    else currentMonth++;
+    renderCalendar();
+  });
+
+  document.getElementById('calBackToDate').addEventListener('click', () => {
+    step2.hidden = true; step1.hidden = false;
+  });
+
+  document.getElementById('calBackToSlots').addEventListener('click', () => {
+    step3.hidden = true; step2.hidden = false;
+  });
+
+  // Booking form submit
+  document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const ok = await submitToFormspree(FORMSPREE_BOOKING, e.target, btn, '¡Reunión confirmada! Te enviamos los detalles por correo.');
+    if (ok) {
+      step3.hidden = true;
+      step1.hidden = false;
+      e.target.reset();
+      selectedDate = null; selectedSlot = null;
+      renderCalendar();
+    }
+  });
+
+  renderCalendar();
+})();
 
 // ===== ANIMATED COUNTERS =====
 function animateCounter(el) {
