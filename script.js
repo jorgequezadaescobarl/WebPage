@@ -95,9 +95,9 @@ function showToast(message) {
 }
 
 // ===== CONFIG: reemplazá estos IDs con los tuyos de formspree.io =====
-const FORMSPREE_CONTACT  = 'https://formspree.io/f/YOUR_CONTACT_ID';
-const FORMSPREE_BOOKING  = 'https://formspree.io/f/YOUR_BOOKING_ID';
-const FORMSPREE_NEWSLETTER = 'https://formspree.io/f/YOUR_NEWSLETTER_ID';
+const FORMSPREE_CONTACT    = 'https://formspree.io/f/xeepkvna';
+const FORMSPREE_BOOKING    = 'https://formspree.io/f/xeepkvna';
+const FORMSPREE_NEWSLETTER = 'https://formspree.io/f/xeepkvna';
 
 // ===== HELPER: enviar formulario via Formspree =====
 async function submitToFormspree(url, formEl, btnEl, successMsg) {
