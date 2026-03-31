@@ -580,10 +580,12 @@
         <h2>Insights Tech en tu <span class="lime">Bandeja</span></h2>
         <p>Resumen mensual de mejores prácticas de ingeniería, tendencias del sector y casos de estudio de nuestro equipo.</p>
       </div>
+      <div data-fs-success id="newsletterSuccess" hidden>¡Suscripción exitosa! Te enviaremos los próximos insights.</div>
       <form class="newsletter-form" id="newsletterForm" novalidate>
         <label for="newsletter-email" class="sr-only">Correo electrónico</label>
-        <input type="email" id="newsletter-email" name="email" placeholder="Tu correo de trabajo" required autocomplete="email" />
-        <button type="submit" class="btn btn-lime">SUSCRIBIRME</button>
+        <input type="email" id="newsletter-email" name="email" placeholder="Tu correo de trabajo" required autocomplete="email" data-fs-field />
+        <span data-fs-error="email" class="fs-field-error"></span>
+        <button type="submit" class="btn btn-lime" data-fs-submit-btn>SUSCRIBIRME</button>
       </form>
     </div>
   </section>
@@ -626,20 +628,23 @@
 
         <!-- Panel: Mensaje -->
         <div id="messagePanel" role="tabpanel">
+          <div data-fs-success id="contactSuccess" hidden>¡Mensaje enviado! Te respondemos en menos de un día hábil.</div>
           <form class="contact-form" id="contactForm" novalidate>
             <div class="form-row">
               <div class="form-field">
                 <label for="contact-name" class="sr-only">Tu nombre</label>
-                <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required autocomplete="name" />
+                <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required autocomplete="name" data-fs-field />
+                <span data-fs-error="name" class="fs-field-error"></span>
               </div>
               <div class="form-field">
                 <label for="contact-email" class="sr-only">Tu correo</label>
-                <input type="email" id="contact-email" name="email" placeholder="Correo de trabajo" required autocomplete="email" />
+                <input type="email" id="contact-email" name="email" placeholder="Correo de trabajo" required autocomplete="email" data-fs-field />
+                <span data-fs-error="email" class="fs-field-error"></span>
               </div>
             </div>
             <div class="form-field">
               <label for="contact-service" class="sr-only">Servicio de interés</label>
-              <select id="contact-service" name="service">
+              <select id="contact-service" name="service" data-fs-field>
                 <option value="" disabled selected>Servicio de interés</option>
                 <option value="software">Desarrollo de Software a Medida</option>
                 <option value="cloud">Cloud e Infraestructura</option>
@@ -652,9 +657,10 @@
             </div>
             <div class="form-field">
               <label for="contact-message" class="sr-only">Tu mensaje</label>
-              <textarea id="contact-message" name="message" placeholder="Contanos sobre tu proyecto — alcance, tiempos, objetivos..." rows="5" required></textarea>
+              <textarea id="contact-message" name="message" placeholder="Contanos sobre tu proyecto — alcance, tiempos, objetivos..." rows="5" required data-fs-field></textarea>
+              <span data-fs-error="message" class="fs-field-error"></span>
             </div>
-            <button type="submit" class="btn btn-lime">ENVIAR MENSAJE</button>
+            <button type="submit" class="btn btn-lime" data-fs-submit-btn>ENVIAR MENSAJE</button>
           </form>
         </div>
 
@@ -766,6 +772,12 @@
 
   <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
 
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contactForm',    formId: 'xeepkvna' });
+    formspree('initForm', { formElement: '#newsletterForm', formId: 'xeepkvna' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -94,17 +94,13 @@ function showToast(message) {
   }, 4000);
 }
 
-// ===== CONFIG: reemplazá estos IDs con los tuyos de formspree.io =====
-const FORMSPREE_CONTACT    = 'https://formspree.io/f/xeepkvna';
-const FORMSPREE_BOOKING    = 'https://formspree.io/f/xeepkvna';
-const FORMSPREE_NEWSLETTER = 'https://formspree.io/f/xeepkvna';
+// ===== BOOKING FORM: Formspree via fetch (campos dinámicos) =====
+const FORMSPREE_BOOKING = 'https://formspree.io/f/xeepkvna';
 
-// ===== HELPER: enviar formulario via Formspree =====
 async function submitToFormspree(url, formEl, btnEl, successMsg) {
   const originalText = btnEl.textContent;
   btnEl.textContent = 'ENVIANDO...';
   btnEl.disabled = true;
-
   try {
     const res = await fetch(url, {
       method: 'POST',
@@ -129,27 +125,6 @@ async function submitToFormspree(url, formEl, btnEl, successMsg) {
   }
 }
 
-// ===== NEWSLETTER FORM =====
-document.getElementById('newsletterForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const input = e.target.querySelector('input');
-  const btn = e.target.querySelector('button');
-  const email = input.value;
-  const ok = await submitToFormspree(FORMSPREE_NEWSLETTER, e.target, btn, `¡Suscripción exitosa! Te enviaremos novedades a ${email}`);
-  if (ok) input.value = '';
-});
-
-// ===== CONTACT FORM =====
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  const ok = await submitToFormspree(FORMSPREE_CONTACT, e.target, btn, '¡Mensaje enviado! Te respondemos en menos de un día hábil.');
-  if (ok) {
-    e.target.reset();
-    if (serviceSelect) serviceSelect.classList.remove('filled');
-  }
-});
-
 // ===== CONTACT TABS =====
 document.querySelectorAll('.contact-tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -169,7 +144,7 @@ document.querySelectorAll('.contact-tab').forEach(tab => {
 // ===== CALENDARIO DE CITAS =====
 (function () {
   const SLOTS = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00'];
-  let currentYear, currentMonth, selectedDate, selectedSlot;
+  let currentYear, currentMonth, selectedDate;
 
   const calDays   = document.getElementById('calDays');
   const calLabel  = document.getElementById('calMonthLabel');
@@ -255,7 +230,6 @@ document.querySelectorAll('.contact-tab').forEach(tab => {
   }
 
   function selectSlot(slot) {
-    selectedSlot = slot;
     step2.hidden = true;
     step3.hidden = false;
 
@@ -305,7 +279,7 @@ document.querySelectorAll('.contact-tab').forEach(tab => {
       step3.hidden = true;
       step1.hidden = false;
       e.target.reset();
-      selectedDate = null; selectedSlot = null;
+      selectedDate = null;
       renderCalendar();
     }
   });
