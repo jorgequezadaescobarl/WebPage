@@ -95,7 +95,7 @@ function showToast(message) {
 }
 
 // ===== BOOKING FORM: Formspree via fetch (campos dinámicos) =====
-const FORMSPREE_BOOKING = 'https://formspree.io/f/xeepkvna';
+const FORMSPREE_BOOKING = 'https://formspree.io/f/mykbjozg';
 
 async function submitToFormspree(url, formEl, btnEl, successMsg) {
   const originalText = btnEl.textContent;
